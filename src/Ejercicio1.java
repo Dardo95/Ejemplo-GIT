@@ -16,6 +16,9 @@ public class Ejercicio1 extends GraphicsProgram{
 		int numLadrillosBase = 14;
 		int anchoLadrillo = 30;
 		int altoLadrillo = 12;
+		int ancho = getWidth();
+		int alto = getHeight();
+		int basePiramide = numLadrillosBase * anchoLadrillo;
 		
 		//querido yo del martes
 		//solo te queda lo mas facil darle la vuelta
@@ -23,7 +26,9 @@ public class Ejercicio1 extends GraphicsProgram{
 		for (int j=0; j< numLadrillosBase; j++){
 			for (int i=0; i< numLadrillosBase-j; i++){
 				GRect ladrillo = new GRect (anchoLadrillo, altoLadrillo);
-				add(ladrillo, anchoLadrillo*j/2 + anchoLadrillo * i, altoLadrillo * j);
+				add(ladrillo,
+						ancho/2 - basePiramide/2 + anchoLadrillo*j/2 + anchoLadrillo * i,
+						alto - altoLadrillo - altoLadrillo * j);
 			}
 		}
 	}
